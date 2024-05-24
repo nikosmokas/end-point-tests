@@ -32,7 +32,7 @@ def send_email(subject, content):
         subject='nmokas-dev.tech - API Tests report',
         html_content=content)
     try:
-        sg=SendGridAPIClient('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')
+        sg = SendGridAPIClient(os.getenv('SENDGRID_API_KEY'))
         response = sg.send(message)
         print(response.status_code)
         print(response.body)

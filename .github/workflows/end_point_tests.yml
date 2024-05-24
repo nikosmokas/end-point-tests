@@ -24,4 +24,6 @@ jobs:
         pip install requests sendgrid
 
     - name: Run API tests
+      env:
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: python api_tests.py
