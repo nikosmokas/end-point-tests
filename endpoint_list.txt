@@ -3,4 +3,3 @@ https://wallet-management.nmokas-dev.tech/
 https://wallet-management.nmokas-dev.tech/login
 https://wallet-management.nmokas-dev.tech/registration
 https://wallet-management.nmokas-dev.tech/wallet/walletCreationForm
-https://jack_russel.nmokas-dev.tech/

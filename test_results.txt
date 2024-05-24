@@ -1,7 +1,1 @@
-Success: https://www.nmokas-dev.tech/ returned status code 200
-Success: https://wallet-management.nmokas-dev.tech/ returned status code 200
-Success: https://wallet-management.nmokas-dev.tech/login returned status code 200
-Success: https://wallet-management.nmokas-dev.tech/registration returned status code 200
-Success: https://wallet-management.nmokas-dev.tech/wallet/walletCreationForm returned status code 200
-Error: Could not connect to https://jack_russel.nmokas-dev.tech/
-Exception: HTTPSConnectionPool(host='jack_russel.nmokas-dev.tech', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000013D76DEBBC0>: Failed to resolve 'jack_russel.nmokas-dev.tech' ([Errno 11001] getaddrinfo failed)"))
+Success: https://www.nmokas-dev.tech/ returned status code 200<br>Success: https://wallet-management.nmokas-dev.tech/ returned status code 200<br>Success: https://wallet-management.nmokas-dev.tech/login returned status code 200<br>Success: https://wallet-management.nmokas-dev.tech/registration returned status code 200<br>Success: https://wallet-management.nmokas-dev.tech/wallet/walletCreationForm returned status code 200<br>Error: Could not connect to https://jack_russel.nmokas-dev.tech/<br>Exception: HTTPSConnectionPool(host='jack_russel.nmokas-dev.tech', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002319F4C5820>: Failed to resolve 'jack_russel.nmokas-dev.tech' ([Errno 11001] getaddrinfo failed)"))<br>

@@ -3,7 +3,7 @@ name: Daily API Tests
 on:
   schedule:
     - cron: '0 8 * * *'  # Runs at 8AM UTC every day
-  workflow_dispatch:
+  workflow_dispatch:  # Manually trigger the workflow
 
 jobs:
   run-api-tests:
@@ -21,34 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests
-        pip install sendgrid
+        pip install requests sendgrid
 
     - name: Run API tests
       run: python api_tests.py
-
-    - name: Send test results via SendGrid
-      env:
-        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-      run: |
-        echo "Reading test results..."
-        TEST_RESULTS=$(cat test_results.txt)
-        echo "Sending email..."
-        python - <<EOF
-        import os
-        import sendgrid
-        from sendgrid.helpers.mail import Mail, Email, To, Content
-
-        sg = sendgrid.SendGridAPIClient(api_key=os.getenv('SENDGRID_API_KEY'))
-        from_email = Email("your-email@example.com")  # Replace with your verified sender email
-        to_email = To("nmokas@nmokas-dev.tech")
-        subject = "Daily API Test Results"
-        content = Content("text/plain", os.getenv('TEST_RESULTS'))
-
-        mail = Mail(from_email, to_email, subject, content)
-        response = sg.client.mail.send.post(request_body=mail.get())
-
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-        EOF
